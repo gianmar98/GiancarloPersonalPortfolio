@@ -1,0 +1,180 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto,sans-serif;
+    background: #050505;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+div{
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.header{
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.header h1{
+    font-size: 52px;
+    font-weight: 700;
+    background: linear-gradient(135deg,#8B6F47 0%, #A0826D 50%, #d2B48C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.subtitle{
+    font-size: 20px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+/* INTRO DESCRIPTION ----------------  */
+.summary{
+    background: rgba(99,102,241,0.1);
+    border: 1px solid rgba(99,102,241,0.3);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.summary-content h4{
+    font-size: 25px;
+    margin-bottom: 8px;
+    color: #A78BFA;
+}
+
+.summary-content p{
+    color: #e2e8f0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ---------------- ----------------  */
+
+
+
+/* CARD CONTAINER STYLING ----------------  */
+.grid-information{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.card-div{
+    /*background: rgba(255, 255,255,0.03);*/
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255, 255,255,0.08);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(99,102,241,0.5);
+}
+
+
+.card-div:hover{
+    transform:translateY(-5px);
+    /*background: rgba(255,255,255,0.06);*/
+    background: rgba(99,102,241,0.1);
+    border-color: rgba(99,102,241,0.5);
+}
+
+/* Touch / mobile-like devices: use .in-view instead of :hover */
+@media (hover: none), (pointer: coarse) {
+  .card-div.in-view{
+    transform: translateY(-5px);
+    background: rgba(99,102,241,0.1);
+    border-color: rgba(99,102,241,0.5);
+  }
+}
+
+.card-div-title{
+    font-size:20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.info-description{
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* ------------------ ----------------  */
+
+
+/* CARD CONTAINER STYLING ----------------  */
+
+.education-card{
+    background: rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(20px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.education-card:hover{
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(139,101,71,0.05);
+}
+
+/* LOADING CERT CARD ----------------  */
+.education-card.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Continuous shimmer/loading effect */
+.education-card.loading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+
+  /* “Wave” of color moving left → right */
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(251,191,36,0.1) 25%,
+    rgba(251,191,36,0.6) 50%,
+    rgba(251,191,36,0.1) 75%,
+    transparent 100%
+  );
+
+  background-size: 200% 100%;          /* Wider than the card */
+  animation: loading-wave 1.8s linear infinite;
+}
+
+@keyframes loading-wave {
+  0%   { background-position: 200% 0; }
+  100% { background-position: 0% 0; }
+}
+/* ----------------  */
+
+/* ------------------ ----------------  */
+
+
+
+
+
+
+
+
+
