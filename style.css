@@ -165,7 +165,7 @@ div{
     transition: all 0.3s ease;
     position: relative;/* hides any overflow from the SVG */
 }
-.skill-container img svg{
+.skill-container img svg {
     width: 70%;      /* smaller than your current 90px; adjust as needed */
     height: auto;
 }
