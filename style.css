@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+    scroll
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto,sans-serif;
     background: #050505;
@@ -11,18 +16,18 @@ div{
 
 .header{
     text-align: center;
-    padding: 60px 20px;
+    padding: 5px 20px;
     position: relative;
 }
 
-.header h1{
+.header h1,h2{
     font-size: 52px;
     font-weight: 700;
     background: linear-gradient(135deg,#8B6F47 0%, #A0826D 50%, #d2B48C 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     letter-spacing: -0.02em;
 }
 
@@ -52,13 +57,145 @@ div{
 
 .summary-content p{
     color: #e2e8f0;
-    font-size: 14px;
+    /*font-size: 14px;*/
     line-height: 1.6;
 }
 
 /* ---------------- ----------------  */
 
+/* NAVIGATION BAR ----------------  */
+#summary-id,
+#skills-id,
+#work-experience-id,
+#projects-id,
+#extracurriculars-id,
+#education-id,
+#certifications-id {
+  scroll-margin-top: 80px; /* tweak this based on your nav height */
+}
 
+.navigation-bar {
+  position: sticky;
+  top: 0;          /* sticks to top of viewport when reached */
+  z-index: 999;    /* stays above other content */
+  margin: 20px 0;
+}
+
+
+.navigation-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;                 /* allows wrapping on small screens */
+  justify-content: space-evenly;   /* auto-spread items */
+  background-color: rgba(99,102,241,0.2);
+  border-radius: 15px;
+}
+
+.navigation-bar ul li {
+    /*float: left;*/
+}
+
+.navigation-bar ul li a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;             /* keep each item on one line */
+    border-radius: 15px;
+}
+
+.navigation-bar ul li a:hover {
+    background-color: rgba(99,102,241,0.5);
+}
+
+
+/* ---------------- ----------------  */
+
+/* INTRO DESCRIPTION ----------------  */
+
+.skills{
+    background: rgba(59,130,246,0.1);
+    border: 2px solid rgba(59,130,246,0.3);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.skills h3{
+    color: #60a5fa;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.skills p{
+    color: #93bbfc;
+    font-size: 16px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 30px;
+    margin-bottom: 20px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px; /* controls how many fit per row */
+}
+
+.skill-container{
+    width: 110px;                    /* controls circle size */
+    height: 110px;
+    margin: 0 auto 10px;             /* centering + and space below */
+    /*border: 2px solid rgba(59,130,246,0.3);*/
+    background:rgba(59,130,246,0.3);
+    border-radius: 30%;              /* circle  50%*/
+    display: flex;                   /* center content */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;/* hides any overflow from the SVG */
+}
+.skill-container img svg{
+    width: 70%;      /* smaller than your current 90px; adjust as needed */
+    height: auto;
+}
+.skill-container:hover{
+    background: rgba(59,130,246,0.4);
+    border: 2px solid rgba(59,130,246,0.3);
+    transform:translateY(-5px);
+}
+
+
+/* Base style for the skill label under the icon */
+.skill-container + p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #93bbfc;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Show the label when the skill is hovered */
+.skill-container:hover + p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ---------------- ----------------  */
 
 /* CARD CONTAINER STYLING ----------------  */
 .grid-information{
