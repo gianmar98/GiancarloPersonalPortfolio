@@ -1,13 +1,16 @@
 html {
   scroll-behavior: smooth;
-    scroll
+  background-color: #050505;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",Roboto,sans-serif;
-    background: #050505;
+    /*background: #050505;*/
+    background-color: #050505;
     color: #94a3b8;
     line-height: 1.6;
+    min-height: 100vh;           /* make sure content reaches bottom */
+    min-height: 100dvh;
 }
 div{
     display: block;
@@ -20,7 +23,7 @@ div{
     position: relative;
 }
 
-.header h1,h2{
+header h2{
     font-size: 52px;
     font-weight: 700;
     background: linear-gradient(135deg,#8B6F47 0%, #A0826D 50%, #d2B48C 100%);
@@ -31,10 +34,79 @@ div{
     letter-spacing: -0.02em;
 }
 
+header h1{
+    font-size: 52px;
+    font-weight: 700;
+    background: linear-gradient(135deg,#3B82F6 0%,#6366F1 50%,#8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    letter-spacing:-0.02em;
+}
+
 .subtitle{
     font-size: 20px;
     color: #94a3b8;
     margin-bottom: 10px;
+}
+
+header .social-container {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+header .social-container .social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* make the icon area behave like a mini skill-container */
+header .social-container .social-item a {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*background: rgba(59,130,246,0.3);*/
+  border-radius: 30%; /* same shape logic as .skill-container */
+  border: 2px solid rgba(59,130,246,0.1);
+
+  transition: all 0.3s ease;
+}
+
+/* icon inside */
+header .social-container .social-item a img {
+  width: 70%;
+  height: auto;
+}
+
+/* hover “lift” + stronger background, just like skill-container:hover */
+header .social-container .social-item a:hover {
+  background: rgba(59, 62, 246, 0.4);
+  border: 2px solid rgba(59,130,246,0.3);
+  transform: translateY(-5px);
+}
+/* hidden until hover */
+header .social-container .social-item p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #ffff;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* show label when the whole item is hovered */
+header .social-container .social-item:hover p {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* INTRO DESCRIPTION ----------------  */
@@ -85,12 +157,14 @@ div{
 .navigation-bar ul {
   list-style: none;
   margin: 0;
-  padding: 0.5rem 1rem;
+  /*padding: 0.5rem 1rem;*/
   display: flex;
   flex-wrap: wrap;                 /* allows wrapping on small screens */
   justify-content: space-evenly;   /* auto-spread items */
-  background-color: rgba(99,102,241,0.2);
+  /*background-color: rgba(99,102,241,0.2);*/
   border-radius: 15px;
+  padding: 5px 0;
+  background-color: #050505;
 }
 
 .navigation-bar ul li {
@@ -114,7 +188,7 @@ div{
 
 /* ---------------- ----------------  */
 
-/* INTRO DESCRIPTION ----------------  */
+/* SKILLS STYLING ----------------  */
 
 .skills{
     background: rgba(59,130,246,0.1);
@@ -161,9 +235,10 @@ div{
     display: flex;                   /* center content */
     align-items: center;
     justify-content: center;
+    position: relative;/* hides any overflow from the SVG */
     overflow: hidden;
     transition: all 0.3s ease;
-    position: relative;/* hides any overflow from the SVG */
+    border: 2px solid rgba(59,130,246,0.1); /*added border so it does not get added after and adjust transition oddly*/
 }
 .skill-container img svg {
     width: 70%;      /* smaller than your current 90px; adjust as needed */
@@ -197,61 +272,146 @@ div{
 
 /* ---------------- ----------------  */
 
-/* CARD CONTAINER STYLING ----------------  */
+
+
+
+/* WORK EXPERIENCE STYLING ---------------- -------------------------------- ----------------*/
+
+.work-experience-container{
+    background: rgba(38,66,139,0.1);
+    border: 2px solid rgba(59,130,246,0.3);
+    border-radius: 16px;
+    padding: 5px;
+    margin: 40px 0;
+}
+
+.individual-job-container{
+    background: rgba(38,66,139,0.2);
+    border-radius: 16px;
+    padding: 5px;
+    border: 2px solid rgba(38,66,139,0.1);
+    transition: all 0.3s ease;
+    margin: 18px;
+    padding-inline: 20px;
+}
+.individual-job-container:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    transform: translateY(-5px);
+}
+
+/* ---------------- ----------------  ------------------------------------------------*/
+
+/* PROJECT CARD CONTAINER STYLING ----------------  */
+
+.projects-container{
+    background: rgba(38,66,139,0.1);
+    border: 2px solid rgba(99,102,241,0.5);
+    border-radius: 16px;
+    padding: 5px;
+    margin: 40px 0;
+}
+
+.individual-project-container{
+    background: rgba(99,102,241,0.13);
+    border-radius: 16px;
+    padding: 5px;
+    border: 2px solid rgba(99,102,241,0.13);
+    transition: all 0.3s ease;
+    margin: 18px;
+    padding-inline: 20px;
+    padding-bottom: 20px;
+}
+
+.individual-project-container:hover {
+    background: rgba(99,102,241, 0.2);
+    border: 2px solid rgba(99,102,241,0.5);
+    transform: translateY(-5px);
+}
+/*.card-div{*/
+/*    background: rgba(255,255,255,0.03);*/
+/*    border: 1px solid rgba(255, 255,255,0.08);*/
+/*    border-radius: 16px;*/
+/*    padding: 30px;*/
+/*    backdrop-filter: blur(10px);*/
+/*    transition: all 0.3s ease;*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*    border-color: rgba(99,102,241,0.5);*/
+/*}*/
+
+
+/*.card-div:hover{*/
+/*    transform:translateY(-5px);*/
+/*    !*background: rgba(255,255,255,0.06);*!*/
+/*    background: rgba(99,102,241,0.1);*/
+/*    border-color: rgba(99,102,241,0.5);*/
+/*}*/
+
+/* Touch / mobile-like devices: use .in-view instead of :hover */
+/*@media (hover: none), (pointer: coarse) {*/
+/*  .card-div.in-view{*/
+/*    transform: translateY(-5px);*/
+/*    background: rgba(99,102,241,0.1);*/
+/*    border-color: rgba(99,102,241,0.5);*/
+/*  }*/
+/*}*/
+
+/*.card-div-title{*/
+/*    font-size:20px;*/
+/*    font-weight: 600;*/
+/*    margin-bottom: 10px;*/
+/*    color: #ffffff;*/
+/*}*/
+
+/*.info-description{*/
+/*    color: #94a3b8;*/
+/*    font-size: 14px;*/
+/*    line-height: 1.8;*/
+/*}*/
+
+/* ---------------- */
+
+/* EXTRACURRICULARS STYLING ----------------  ------------------------------------------------*/
+.extracurriculars-container{
+    background: rgba(38,66,139,0.1);
+    border: 2px solid rgba(99,102,241,0.5);
+    border-radius: 16px;
+    padding: 5px;
+    margin: 40px 0;
+}
+
+.individual-extracurricular-container{
+    background: rgba(99,102,241,0.13);
+    border-radius: 16px;
+    padding: 5px;
+    border: 2px solid rgba(99,102,241,0.13);
+    transition: all 0.3s ease;
+    margin: 18px;
+    padding-inline: 20px;
+}
+
+.individual-extracurricular-container:hover {
+    background: rgba(99,102,241, 0.2);
+    border: 2px solid rgba(99,102,241,0.5);
+    transform: translateY(-5px);
+}
+
+.individual-extracurricular-container td {
+    padding: 10px;
+}
+
+/* ---------------- ----------------  ----------------------------------------------------------------*/
+
+
+
+/* EDUCATION / CERTIFICATION STYLING ----------------  */
 .grid-information{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
     gap: 30px;
     margin: 30px 0;
 }
-
-.card-div{
-    /*background: rgba(255, 255,255,0.03);*/
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255, 255,255,0.08);
-    border-radius: 16px;
-    padding: 30px;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    border-color: rgba(99,102,241,0.5);
-}
-
-
-.card-div:hover{
-    transform:translateY(-5px);
-    /*background: rgba(255,255,255,0.06);*/
-    background: rgba(99,102,241,0.1);
-    border-color: rgba(99,102,241,0.5);
-}
-
-/* Touch / mobile-like devices: use .in-view instead of :hover */
-@media (hover: none), (pointer: coarse) {
-  .card-div.in-view{
-    transform: translateY(-5px);
-    background: rgba(99,102,241,0.1);
-    border-color: rgba(99,102,241,0.5);
-  }
-}
-
-.card-div-title{
-    font-size:20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.info-description{
-    color: #94a3b8;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-/* ------------------ ----------------  */
-
-
-/* CARD CONTAINER STYLING ----------------  */
 
 .education-card{
     background: rgba(255,255,255,0.03);
@@ -263,12 +423,18 @@ div{
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    min-height: 160px;
 }
 
 .education-card:hover{
     transform: translateY(-5px);
     background: rgba(255,255,255,0.05);
     border-color: rgba(139,101,71,0.05);
+}
+
+.education-card a{
+    font-size: 18px;
+    color: #ffff;
 }
 
 /* LOADING CERT CARD ----------------  */
@@ -303,9 +469,22 @@ div{
   0%   { background-position: 200% 0; }
   100% { background-position: 0% 0; }
 }
-/* ----------------  */
 
-/* ------------------ ----------------  */
+/* Make the whole card-link look like a normal card, not a purple link */
+.grid-information a,
+.grid-information a:visited {
+  text-decoration: none;
+  color: inherit;      /* take card’s text color */
+  display: block;      /* making whole card clickable */
+}
+
+/* Optional: if you want to style the 'View Curriculum' text specifically */
+.education-card p a,
+.education-card p a:visited {
+  text-decoration: none;
+  color: inherit;      /* or pick a custom color if you want it to stand out */
+}
+/* ----------------  */
 
 
 
