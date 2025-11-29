@@ -397,8 +397,44 @@ header .social-container .social-item:hover p {
     transform: translateY(-5px);
 }
 
-.individual-extracurricular-container td {
-    padding: 10px;
+/* FLEX EXTRACURRICULARS LAYOUT */
+.extracurricular-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 12px 0;
+}
+
+.extracurricular-item--reverse {
+    flex-direction: row-reverse;
+}
+
+.extracurricular-item-image {
+    flex: 0 0 40%;
+    max-width: 280px;
+}
+
+.extracurricular-item-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.extracurricular-item-text {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .extracurricular-item,
+    .extracurricular-item--reverse {
+        flex-direction: column;
+    }
+
+    .extracurricular-item-image,
+    .extracurricular-item-text {
+        max-width: 100%;
+    }
 }
 
 /* ---------------- ----------------  ----------------------------------------------------------------*/
