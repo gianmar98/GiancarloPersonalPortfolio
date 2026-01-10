@@ -83,8 +83,7 @@ portfolio/
 ## 🔧 Local Development
 
 ### Prerequisites
-- Modern web browser
-- Local web server (optional, for testing)
+- Modern web browser (Chrome, Firefox, Safari, Edge)
 
 ### Setup
 ```bash
@@ -94,15 +93,9 @@ git clone https://github.com/gianmar98/GiancarloPersonalPortfolio.git
 # Navigate to project directory
 cd GiancarloPersonalPortfolio
 
-# Open in browser or serve locally
-# Option 1: Direct file opening
+# Open directly in browser
 open index.html
-
-# Option 2: Local server (Python)
-python -m http.server 8000
-
-# Option 3: Local server (Node.js)
-npx serve .
+# or simply double-click index.html in your file explorer
 ```
 
 ## 🚀 Deployment
@@ -129,12 +122,6 @@ The site is deployed using AWS services for enterprise-grade reliability:
    - Automatic renewal management
    - Enhanced security protocols
 
-## 📈 Performance Metrics
-
-- **Load Time**: < 2 seconds on standard connections
-- **Lighthouse Score**: 95+ across all categories
-- **Mobile Responsive**: 100% compatibility
-- **Cross-Browser Support**: Modern browsers (Chrome, Firefox, Safari, Edge)
 
 ## 🎯 Professional Highlights
 
@@ -158,7 +145,6 @@ The site is deployed using AWS services for enterprise-grade reliability:
 - **GitHub**: [github.com/gianmar98](https://github.com/gianmar98)
 - **Medium**: [@giancusm](https://medium.com/@giancusm)
 
-## 📄 License
 
 © 2025 Giancarlo Martinez. All rights reserved.
 
