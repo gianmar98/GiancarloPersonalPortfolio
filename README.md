@@ -121,6 +121,10 @@ The site is deployed using AWS services for enterprise-grade reliability:
    - Automated SSL/TLS certificate provisioning
    - Automatic renewal management
    - Enhanced security protocols
+  
+
+<img width="508" height="592" alt="PortfolioDiagram" src="https://github.com/user-attachments/assets/c0e1b420-9288-427a-bc4a-b13ae023d916" />
+
 
 
 ## 🎯 Professional Highlights
