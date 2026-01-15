@@ -38,6 +38,9 @@ This portfolio represents my professional journey as a Data Analytics Specialist
 - **AWS Certificate Manager** - SSL/TLS certificate management
 - **HTTPS Enforcement** - Secure encrypted traffic
 
+<img width="508" height="592" alt="PortfolioDiagram" src="https://github.com/user-attachments/assets/0ed0b17f-e07c-45d4-abaf-47ca382adf31" />
+
+
 ## 📁 Project Structure
 
 ```
@@ -121,10 +124,6 @@ The site is deployed using AWS services for enterprise-grade reliability:
    - Automated SSL/TLS certificate provisioning
    - Automatic renewal management
    - Enhanced security protocols
-  
-
-<img width="508" height="592" alt="PortfolioDiagram" src="https://github.com/user-attachments/assets/c0e1b420-9288-427a-bc4a-b13ae023d916" />
-
 
 
 ## 🎯 Professional Highlights
