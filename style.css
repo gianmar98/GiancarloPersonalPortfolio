@@ -328,47 +328,53 @@ header .social-container .social-item:hover p {
     border: 2px solid rgba(99,102,241,0.5);
     transform: translateY(-5px);
 }
-/*.card-div{*/
-/*    background: rgba(255,255,255,0.03);*/
-/*    border: 1px solid rgba(255, 255,255,0.08);*/
-/*    border-radius: 16px;*/
-/*    padding: 30px;*/
-/*    backdrop-filter: blur(10px);*/
-/*    transition: all 0.3s ease;*/
-/*    position: relative;*/
-/*    overflow: hidden;*/
-/*    border-color: rgba(99,102,241,0.5);*/
-/*}*/
 
+.project-title {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
 
-/*.card-div:hover{*/
-/*    transform:translateY(-5px);*/
-/*    !*background: rgba(255,255,255,0.06);*!*/
-/*    background: rgba(99,102,241,0.1);*/
-/*    border-color: rgba(99,102,241,0.5);*/
-/*}*/
+.project-title-text {
+    min-width: 0;
+}
 
-/* Touch / mobile-like devices: use .in-view instead of :hover */
-/*@media (hover: none), (pointer: coarse) {*/
-/*  .card-div.in-view{*/
-/*    transform: translateY(-5px);*/
-/*    background: rgba(99,102,241,0.1);*/
-/*    border-color: rgba(99,102,241,0.5);*/
-/*  }*/
-/*}*/
+.project-github-icon {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    background: rgba(99,102,241,0.2);
+    border: 1px solid rgba(99,102,241,0.35);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+}
 
-/*.card-div-title{*/
-/*    font-size:20px;*/
-/*    font-weight: 600;*/
-/*    margin-bottom: 10px;*/
-/*    color: #ffffff;*/
-/*}*/
+.project-github-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
 
-/*.info-description{*/
-/*    color: #94a3b8;*/
-/*    font-size: 14px;*/
-/*    line-height: 1.8;*/
-/*}*/
+.project-github-icon:hover {
+    background: rgba(99,102,241,0.35);
+    border-color: rgba(99,102,241,0.5);
+}
+
+@media (max-width: 600px) {
+    .project-title {
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .project-github-icon {
+        margin-top: 6px;
+    }
+}
 
 /* ---------------- */
 
@@ -442,6 +448,24 @@ header .social-container .social-item:hover p {
 
 
 /* EDUCATION / CERTIFICATION STYLING ----------------  */
+.badge-hint {
+  width: fit-content;
+  max-width: 100%;
+  margin: 6px auto 14px;
+  padding: 8px 14px;
+  border: 1px solid rgba(59,130,246,0.35);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(99,102,241,0.08));
+  color: #dbeafe;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 18px rgba(2,6,23,0.35);
+}
+
 .grid-information{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
@@ -521,8 +545,6 @@ header .social-container .social-item:hover p {
   color: inherit;      /* or pick a custom color if you want it to stand out */
 }
 /* ----------------  */
-
-
 
 
 
