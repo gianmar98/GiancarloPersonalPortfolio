@@ -26,7 +26,23 @@ Personal portfolio built as a static site with no frameworks or build tools — 
 - **AWS Route 53** — DNS and custom domain routing
 - **AWS Certificate Manager** — SSL/TLS certificate provisioning
 
-<img width="508" height="592" alt="PortfolioDiagram" src="https://github.com/user-attachments/assets/0ed0b17f-e07c-45d4-abaf-47ca382adf31" />
+---
+
+## Architecture
+
+![AWS architecture for giancarlomartinez.com: Route 53 aliases route apex and www traffic to two CloudFront distributions over S3 website origins](portfolioArchitecture.png)
+
+Both hostnames are served end to end by AWS managed services — there is no server to patch.
+
+| Step | What happens |
+|---|---|
+| 1 | The browser resolves `giancarlomartinez.com` or `www.giancarlomartinez.com` against the Route 53 public hosted zone. |
+| 2-3 | `A` alias records point each hostname at its own CloudFront distribution. |
+| 4-5 | A single ACM certificate in `us-east-1` covers both hostnames as SANs and is attached to both distributions. Viewer policy is `redirect-to-https` with `sni-only`. DNS validation via CNAME records in the same zone keeps renewal automatic. |
+| 6 | The apex distribution fetches from the S3 **website endpoint** as a custom origin. Because it is a website endpoint rather than a REST endpoint, OAC/OAI does not apply and the bucket policy grants public `s3:GetObject`. |
+| 7-8 | The `www` bucket holds no objects; it is configured `RedirectAllRequestsTo` the apex hostname and answers `301`, sending the browser back to step 1. |
+
+Editable source: [`portfolioArchitecture.drawio`](portfolioArchitecture.drawio) — open at [app.diagrams.net](https://app.diagrams.net).
 
 ---
 
@@ -41,6 +57,8 @@ GiancarloPersonalPortfolio/
 ├── README.md                # This file
 ├── Giancarlo_Martinez.pdf   # Resume
 ├── git.ignore               # Local ignore list
+├── portfolioArchitecture.png    # AWS architecture diagram
+├── portfolioArchitecture.drawio # Diagram source (draw.io)
 ├── enactus.jpeg
 ├── gianAYSO.jpeg
 ├── gianGuate23s.jpeg
